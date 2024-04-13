@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap');
+body {
+    background: rgb(82,149,23);
+    background: linear-gradient(90deg, rgba(82,149,23,1) 0%, rgba(46,121,9,1) 35%, rgba(48,200,120,1) 100%);
+    color: #fff; 
+    font-family: "Truculenta", sans-serif;   
+}
+
+h2 {
+    font-size: 48px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 440px;
+    margin: 0 auto;
+}
+
+
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-image: url('https://jaimelallemand.fr/img/memory/quizy-mg-item-topxs.jpg.png');
+    background-size: cover;
+    background-position: center;
+    background-color: #fff;
+    border: 1px solid crimson;
+    margin: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+    color: transparent; 
+    transition: background-color 0.3s ease;
+    /* Ajout image */
+    transition: transform 0.5s ease; /* Ajoute une transition pour une animation fluide */
+    transform-style: preserve-3d; /* Assure que les enfants respectent la transformation 3D */
+}
+
+
+.flipped {
+    background-color: #eee;
+    color: black; 
+    background-image: none;
+    /* Ajout image */
+    transform: rotateY(180deg);
+}
+
+/* Ajout image */
+
+img {
+    width: 100px;
+    height: 100px;
+}
+    
+.card img {
+    display: none; /* Masque les images par défaut */
+    transition: transform 0.5s ease;
+    backface-visibility: hidden; /* Masque le recto des images lorsqu'elles sont tournées */
+}
+
+.card.flipped img {
+    display: block; /* Affiche les images lorsque la carte est retournée */
+    transform: rotateY(-180deg);
+}
+
+.success {
+    background-color: #CD53CA;
+    color: #fff;
+}
+
+#successText {
+    text-align: center;
+    width: 440px;
+    margin: 20px auto;
+    font-size: 24px;
+    display: none;
+    border: 1px solid orange;
+    padding: 5px;
+}
+
+#matchesCount {
+    width: 440px;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid orange;
+    padding: 5px;
+}
